@@ -1,9 +1,8 @@
-# Ide Saya: Membikin website blog yang mencegahkan bahaya perubahan iklim. Saya bisa coding HTML dan CSS kok :D
+# PmMpi adalah website yan membagi kesadaran tentang kebahayaan, penyebab dan cara mengatasi penrubahan iklim + detector sampah dalam gambar aitomatic.
 ## Inilah jenis proyek saya:
 > Website Blog
+> Oject Detector
 
-## Pustaka yang akan saya gunakan: - Flask
+## Pustaka yang akan saya gunakan: - Flask - Roboflow - Subprocess - Ultralytics - Argparse 
 
-## Referensi yang berguna: - Referensi 1 - Referensi N
-
-## Artikel panduan yang akan membantu saya selama pengembangan Sebuah komentar singkat yang akan membantu Anda mengingat tentang apa artikel tersebut... [kata yang dapat diklik yang akan berisi tautan] (https://link_to_the_article)
+## Banyak gambar-gambar yang di ambil dari Pixabay
