@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PmMpi: Projek Mubar Mengurangi Perubahan Iklim</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="icon" href="../static/img/favicon.ico">
+</head>
+<body>
+    <nav>
+            <ul  class="navig">        
+                <li><h2><div class="nav"><a href="/">Home</a></div></h2></li>
+                <li><h2><div class="active_nav nav"><a href="/project">Project</a></div></h2></li>
+        <li><h2><div class="nav"><a  href="/blog">Blog</a></div></h2></li>
+        <li><h2><div  class="nav"><a href="/about">About/Tentang</a></div></h2></li>
+
+    </ul>
+    </nav>
+    <h1>Project PmMpi</h1>
+    <h2>Salah satu penyebab perubahan iklim adalah pembuangan sampah sembarangan. Solusi untuk masalah ini adalah dengan menambah jumlah tong sampah dan selalu buang kedalam tong sampah.</h2>
+    <h2>Program ini bisa mendeteksi jumlah tong sampah dalam satu gambar, kirimkan gambar depan rumahmu atau jalan depan rumahmu untuk mendeteksi jumlah tong sampah!</h2>
+    <div class="dive">
+        <form method=post enctype=multipart/form-data>
+        <input type="file" id="imaginput" value="Gambar anda"  name="image">
+        <button type="submit">Scan!</button>
+    </div>
+{% if not filename=='' %}
+<img src="{{ url_for('static', filename='outputs/' + filename) }}">
+{% if count>3 %}
+<h2>Ada {{ count }} tong sampah!</h2>
+{% else %}
+<h2>Kamu butuh beberapa tong sampah!</h2>
+{% endif %}
+{% endif %}
+
+    <script>
+        function imga(){
+        var imga=document.getElementById("imaginput");
+        value=imga.value
+        alert(value)
+        }
+    </script>
+
+</html>

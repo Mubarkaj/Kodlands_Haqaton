@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PmMpi: Projek Mubar Mengurangi Perubahan Iklim</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="icon" href="../static/img/favicon.ico">
+</head>
+<body>
+    <nav>
+            <ul  class="navig">        
+                <li><h2><div class="nav"><a href="/">Home</a></div></h2></li>
+                <li><h2><div class="nav"><a href="/project">Project</a></div></h2></li>
+        <li><h2><div class="active_nav nav"><a  href="/blog">Blog</a></div></h2></li>
+        <li><h2><div  class="nav"><a href="/about">About/Tentang</a></div></h2></li>
+
+    </ul>
+    </nav>
+    <h1>Blog PmMpi</h1>
+    <div class="blogdiv" id="iklimdiv">
+    <h2>Apakah anda tahu apa itu Iklim?</h2>
+    <button onclick="changer_text('iklim')"id="iklimus">Apa itu artinya iklim?</button></div>
+
+        <div class="blogdiv" id="perubahandiv">
+    <h2>Apakah anda tahu apa itu perubahan iklim?</h2>
+    <button onclick="changer_text('perubahan')"id="perubahanus">Apa itu perubahan iklim?</button></div>
+
+    <div class="blogdiv" id="penyebabdiv">
+    <h2>Apakah anda tahu sebab-sebab kejadian perubahan iklim?</h2>
+    <button onclick="changer_text('penyebab')"id="penyebabus">Apa itu penyebab perubahan iklim?</button></div>
+   
+    <div class="blogdiv" id="solusidiv">
+    <h2>Apakah anda tahu solusi-solusi untuk mencegah perubahan iklim?</h2>
+    <button onclick="changer_text('solusi')"id="solusius">Apa itu solusi bagi perubahan iklim?</button></div>
+
+
+    <script>
+    
+        function close_text(section){
+            const divos=document.getElementById(section+"div")
+            const desc = document.getElementById("element_"+section);
+            divos.removeChild(desc);
+            const but_close = document.getElementById("close_"+section)
+            divos.removeChild(but_close)
+            const buton_iklimus = document.getElementById(section+"us");
+            buton_iklimus.style="visibility:visible"
+
+        }
+        function changer_text(section){
+            switch (section) {
+                case "iklim":
+                    var inner=`Iklim adalah pola cuaca rata-rata di suatu wilayah yang terjadi dalam jangka waktu panjang, biasanya 30 tahun atau lebih.`
+                    break;
+                case "penyebab":
+                    var inner=`
+Pembakaran bahan bakar fosil seperti bensin, batu bara, dan gas alam
+Penebangan dan pembakaran hutan besar-besaran
+Emisi gas buang dari kendaraan bermotor
+Limbah industri dan pabrik
+Pertanian intensif yang menghasilkan gas metana dari ternak dan sawah
+Penggunaan listrik berlebihan dari sumber non-terbarukan`
+                    break;
+                case "perubahan":
+                    var inner=`Perubahan iklim terjadi karena aktivitas manusia — seperti membakar bahan bakar fosil dan penebangan hutan — menghasilkan terlalu banyak gas CO₂ yang memerangkap panas di atmosfer.
+Akibatnya, Bumi makin panas: es kutub mencair, cuaca makin ekstrem, dan banyak makhluk hidup terancam.`
+                    break;
+                case "solusi":
+                    var inner=`Berikut cara-cara yang bisa dilakukan untuk mencegah perubahan iklim:
+
+Beralih ke energi terbarukan seperti panel surya dan turbin angin
+Kurangi penggunaan kendaraan pribadi, pilih transportasi umum atau sepeda
+Hemat listrik di rumah dengan mematikan perangkat yang tidak dipakai
+Tanam lebih banyak pohon dan jaga kelestarian hutan
+Kurangi konsumsi daging, terutama sapi yang menghasilkan banyak metana
+Daur ulang sampah dan kurangi penggunaan plastik sekali pakai
+Dukung produk dan perusahaan yang ramah lingkungan
+Edukasi orang-orang di sekitar tentang pentingnya menjaga lingkungan`
+                    break;
+            }
+            const divos=document.getElementById(section+"div")
+            const buton_iklimus = document.getElementById(section+"us");
+            divos.removeChild(buton_iklimus);
+            buton_iklimus.style="visibility:hidden;position:absolute;"
+            divos.appendChild(buton_iklimus);
+            const elementery=document.createElement("h3");
+            elementery.textContent=inner;
+            elementery.id = `element_${section}`
+
+            divos.appendChild(elementery)
+
+            const close_btn=document.createElement("button");
+            close_btn.textContent="close";
+            close_btn.id="close_"+section
+            
+            close_btn.onclick = () => close_text(section);
+            divos.appendChild(close_btn)
+               }
+
+    </script>
+
+
+</html>
